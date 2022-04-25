@@ -1,0 +1,58 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model CRUD_Login_Core.Models.DataModel
+
+<form asp-controller="Home" asp-action="AddData" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <div class="form-group col-md-8">
+
+        <label asp-for="Name" class="control-label" ></label>
+
+        <input placeholder="Name" type="text" class="form-control" asp-for="Name" required="required"/>
+        <span asp-validation-for="Name" class="text-danger"></span>
+
+
+    </div>
+
+
+    <div class="form-group col-md-8">
+
+        <label>Moblie</label>
+
+        <input placeholder="Mobile" type="text" class="form-control" asp-for="Moblie" />
+        <span asp-validation-for="Moblie" class="text-danger"></span>
+
+
+    </div>
+    <div class="form-group col-md-8">
+
+        <label>Department</label>
+
+        <input placeholder="Department" type="text" class="form-control" asp-for="Depart" />
+        <span asp-validation-for="Depart" class="text-danger"></span>
+
+
+    </div>
+
+    <div class="form-group col-md-8">
+
+        <label>Email</label>
+
+        <input placeholder="Email" type="text" class="form-control" asp-for="Email" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+
+
+    </div>
+
+    <button class="btn btn-primary" value="button">Submit</button>
+
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

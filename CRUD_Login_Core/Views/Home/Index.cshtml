@@ -1,0 +1,44 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+ @model List<CRUD_Login_Core.Models.DataModel>
+
+<table class="table table-striped">
+
+    <tr>
+
+        <th>Name</th>
+        <th>mobile</th>
+        <th>Department</th>
+        <th>Email</th>
+        <th>Edit</th>
+        <th>Delete</th>
+
+    </tr>
+
+    @foreach (var item in Model)
+    {
+
+
+<tr>
+
+        <td>@item.Name</td>
+        <td>@item.Moblie</td>
+         <td>@item.Depart</td>
+   
+         <td>@item.Email</td>
+
+         <td><a class="btn btn-primary" asp-controller="Home" asp-action="Edit" asp-route-id="@item.Id">Edit</a></td>
+         <td><a class="btn btn-danger" asp-controller="Home" asp-action="Delete" asp-route-id="@item.Id">Delete</a></td>
+
+</tr>
+
+
+
+
+    }
+
+
+
+</table>
